@@ -111,7 +111,7 @@ endif ( )
 
 ## BUILD
 # Create lua library
-add_library ( liblua ${SRC_CORE} ${SRC_LIB} ${LUA_DLL_RC} )
+add_library ( liblua STATIC ${SRC_CORE} ${SRC_LIB} ${LUA_DLL_RC} )
 target_link_libraries ( liblua ${LIBS} )
 set_target_properties ( liblua PROPERTIES OUTPUT_NAME lua CLEAN_DIRECT_OUTPUT 1 )
 if ( LUA_BUILD_AS_DLL )
@@ -130,6 +130,8 @@ if ( LUA_BUILD_WLUA )
   target_link_libraries ( wlua liblua )
   install_executable ( wlua )
 endif ( )
+
+
 
 install_executable ( lua luac )
 install_library ( liblua )
