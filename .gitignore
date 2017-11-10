@@ -1,3 +1,7 @@
 _*
 .DS_Store
 
+.idea/lua.iml
+.idea
+cmake-build-debug
+
